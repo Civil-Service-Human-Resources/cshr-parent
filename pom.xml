@@ -10,7 +10,7 @@
     <packaging>pom</packaging>
 
     <name>cshrparent</name>
-    <description>This is the CSHR parent pom for all Spring based Microservices</description>
+    <description>This is the CSHR parent pom for all Spring based Microservices.  It enables Eureka and Swagger. There are no database dependencies since not all microservices will require any</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -29,6 +29,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <springfox.swagger.version>2.7.0</springfox.swagger.version>
+        <springframework.cloud.version>Edgware.RELEASE</springframework.cloud.version>
     </properties>
 
     <dependencyManagement>
@@ -55,6 +56,14 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${springframework.cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
 
             <!-- Testing -->
@@ -107,6 +116,11 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka-server</artifactId>
         </dependency>
 
         <dependency>
