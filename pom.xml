@@ -183,4 +183,18 @@
             </plugin>
         </plugins>
     </build>
+
+    <distributionManagement>
+        <repository>
+            <id>bintray-rpg-repo</id>
+            <name>rpg-repo</name>
+            <url>https://api.bintray.com/maven/rpg/repo/cshr/;publish=1</url>
+        </repository>
+        <snapshotRepository>
+            <uniqueVersion>true</uniqueVersion>
+            <id>bintray-rpg-snapshots</id>
+            <name>rpg-snapshots</name>
+            <url>https://api.bintray.com/maven/rpg/snapshots/cshr/;publish=1</url>
+        </snapshotRepository>
+    </distributionManagement>
 </project>
