@@ -6,11 +6,11 @@
 
     <groupId>uk.gov.cshr</groupId>
     <artifactId>cshr-parent</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>0.0.3</version>
     <packaging>pom</packaging>
 
     <name>cshrparent</name>
-    <description>This is the CSHR parent pom for all Spring based Microservices.  It enables Eureka and Swagger. There are no database dependencies since not all microservices will require any</description>
+    <description>This is the CSHR parent pom for all Spring based Microservices.  It enables Swagger. There are no database dependencies since not all microservices will require any</description>
 
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -119,11 +119,6 @@
         </dependency>
 
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-eureka-server</artifactId>
-        </dependency>
-
-        <dependency>
             <groupId>javax.inject</groupId>
             <artifactId>javax.inject</artifactId>
         </dependency>
@@ -190,11 +185,5 @@
             <name>rpg-repo</name>
             <url>https://api.bintray.com/maven/rpg/repo/cshr/;publish=1</url>
         </repository>
-        <snapshotRepository>
-            <uniqueVersion>true</uniqueVersion>
-            <id>bintray-rpg-snapshots</id>
-            <name>rpg-snapshots</name>
-            <url>https://api.bintray.com/maven/rpg/snapshots/cshr/;publish=1</url>
-        </snapshotRepository>
     </distributionManagement>
 </project>
