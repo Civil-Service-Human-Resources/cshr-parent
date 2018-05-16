@@ -6,7 +6,7 @@
 
     <groupId>uk.gov.cshr</groupId>
     <artifactId>cshr-parent</artifactId>
-    <version>0.0.4</version>
+    <version>0.0.5-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>cshrparent</name>
@@ -167,10 +167,11 @@
             <artifactId>springfox-swagger-ui</artifactId>
             <scope>compile</scope>
         </dependency>
-
     </dependencies>
 
     <build>
+        <finalName>${project.artifactId}</finalName>
+
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -181,6 +182,7 @@
                     <target>1.8</target>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
@@ -190,9 +192,14 @@
 
     <distributionManagement>
         <repository>
-            <id>bintray-rpg-repo</id>
-            <name>rpg-repo</name>
-            <url>https://api.bintray.com/maven/rpg/repo/cshr/;publish=1</url>
+            <id>nexus</id>
+            <url>https://nexus.dev.cshr-gov.uk/nexus/content/repositories/releases/</url>
         </repository>
+
+        <snapshotRepository>
+            <id>nexus</id>
+            <name>Internal Snapshots</name>
+            <url>https://nexus.dev.cshr-gov.uk/nexus/content/repositories/snapshots/</url>
+        </snapshotRepository>
     </distributionManagement>
 </project>
